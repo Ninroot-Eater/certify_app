@@ -134,16 +134,22 @@ class Type1:
 
         else:
             for i in range(4):
-                rt_lst.append(self.current['real total'] - int(( int(t_lst[i]) - int(std_lst[i]))))
+                rt_lst.append(self.current['real total'] - int(( float(t_lst[i]) - float(std_lst[i]))))
 
         return_lst = []
         return_lst.append(abs(sum(rt_lst)/4))
         grade = ""
+        print(self.current['mrk_dic'].keys())
         for j in self.current['mrk_dic'].keys():
-            if int(abs(sum(rt_lst)/4)) in range(self.current['mrk_dic'][j][0],self.current['mrk_dic'][j][1]):
+
+            if int(abs(sum(rt_lst)/4)) in range(int(self.current['mrk_dic'][j][0]),int(self.current['mrk_dic'][j][1])):
                 grade = j
+                break
+
+
 
             else:
+
                 return f"{self.std_name}: Marks too low to receive a certificate."
 
         return_lst = return_lst + rt_lst

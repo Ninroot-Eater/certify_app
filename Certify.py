@@ -26,7 +26,7 @@ def browsejson(lbl):
 
 # Create the root window
 window = tk.Tk()
-window.title('Certify v1.7.3')
+window.title('Certify v1.7.4')
 window.geometry("500x500")
 window.config(background="white")
 
